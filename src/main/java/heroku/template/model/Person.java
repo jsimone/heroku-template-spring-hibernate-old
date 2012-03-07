@@ -1,42 +1,43 @@
 package heroku.template.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 public class Person {
-	
-	@Id
-	@Column(name="id")
-	@GeneratedValue
-	private Integer id;
-	
-	@Column(name="first_name")
-	private String firstname;
 
-	@Column(name="last_name")
-	private String lastname;
+    @Id
+    @GeneratedValue
+    private Integer id;
 
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getFirstname() {
-		return firstname;
-	}
-	public String getLastname() {
-		return lastname;
-	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
-	
+    private String firstName;
+
+    private String lastName;
+
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
 }
