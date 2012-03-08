@@ -18,13 +18,13 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
-    @RequestMapping("/people")
+    @RequestMapping("/")
     public String listPeople(Map<String, Object> map) {
 
         map.put("person", new Person());
         map.put("peopleList", personService.listPeople());
 
-        return "person";
+        return "people";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
@@ -33,7 +33,7 @@ public class PersonController {
 
         personService.addPerson(person);
 
-        return "redirect:/people";
+        return "redirect:/people/";
     }
 
     @RequestMapping("/delete/{personId}")
@@ -42,6 +42,6 @@ public class PersonController {
 
         personService.removePerson(personId);
 
-        return "redirect:/people";
+        return "redirect:/people/";
     }
 }
